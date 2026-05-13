@@ -14,7 +14,7 @@ export function HomeHero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-white">
+    <section className="bg-[#263479] text-white">
       <motion.div
         className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
         initial={reduceMotion ? false : "hidden"}
@@ -22,11 +22,11 @@ export function HomeHero() {
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
       >
         <motion.div variants={reveal} className="mx-auto max-w-4xl text-center">
-          <p className="mb-4 text-sm font-medium text-[#263479]">Responsible credit for Uganda</p>
-          <h1 className="text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-[#050505] sm:text-7xl">
+          <p className="mb-4 text-sm font-medium text-[#f79e26]">Responsible credit for Uganda</p>
+          <h1 className="text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-7xl">
             Clear credit, simply explained.
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#3f4656]">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/82">
             Compare loan options, see the basic requirements, and speak to a loan officer before submitting an application.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
@@ -38,16 +38,16 @@ export function HomeHero() {
         </motion.div>
 
         <motion.div variants={reveal} className="mt-14 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
-          <div className="min-h-[360px] rounded-lg bg-[linear-gradient(135deg,#263479_0%,#121b4d_62%,#050505_100%)] p-6 sm:p-8">
+          <div className="min-h-[360px] rounded-lg bg-[linear-gradient(135deg,#ffffff1f_0%,#121b4d_52%,#050505_100%)] p-6 ring-1 ring-white/18 sm:p-8">
             <div className="flex h-full min-h-[300px] items-center justify-center rounded-md border border-dashed border-white/45 bg-white/8 text-center text-sm font-medium text-white">
               [Verified Runda office, staff, or customer support image]
             </div>
           </div>
           <div className="grid gap-4">
             {["Requirements before application", "Assessment before approval", "Human loan support"].map((item) => (
-              <div key={item} className="rounded-lg border border-[#e4e8f4] bg-[#eef1ff] p-6">
-                <p className="text-sm font-medium text-[#263479]">Runda Finance</p>
-                <h2 className="mt-3 text-2xl font-medium tracking-[-0.025em] text-[#050505]">{item}</h2>
+              <div key={item} className="rounded-lg border border-white/18 bg-white/10 p-6">
+                <p className="text-sm font-medium text-[#f79e26]">Runda Finance</p>
+                <h2 className="mt-3 text-2xl font-medium tracking-[-0.025em] text-white">{item}</h2>
               </div>
             ))}
           </div>
@@ -56,10 +56,10 @@ export function HomeHero() {
         <motion.div variants={reveal} className="mt-16">
           <div className="mb-5 flex items-end justify-between gap-4">
             <div>
-              <p className="text-sm font-medium text-[#263479]">Loan products</p>
-              <h2 className="mt-2 text-3xl font-medium tracking-[-0.035em] text-[#050505] sm:text-5xl">Choose the right starting point.</h2>
+              <p className="text-sm font-medium text-[#f79e26]">Loan products</p>
+              <h2 className="mt-2 text-3xl font-medium tracking-[-0.035em] text-white sm:text-5xl">Choose the right starting point.</h2>
             </div>
-            <Link href="/loans" className="hidden text-sm font-medium text-[#050505] hover:text-[#263479] sm:inline">
+            <Link href="/loans" className="hidden text-sm font-medium text-white/82 hover:text-white sm:inline">
               See all
             </Link>
           </div>
@@ -68,7 +68,7 @@ export function HomeHero() {
               <Link
                 key={loan.slug}
                 href={`/loans/${loan.slug}`}
-                className="group rounded-lg border border-[#e4e8f4] bg-white p-5 transition hover:border-[#263479] hover:bg-[#eef1ff]"
+                className="group rounded-lg border border-white/18 bg-white p-5 text-[#050505] transition hover:border-[#f79e26] hover:bg-[#fff8ef]"
               >
                 <h3 className="text-xl font-medium tracking-[-0.02em] text-[#050505]">{loan.name}</h3>
                 <p className="mt-3 text-sm leading-6 text-[#3f4656]">{loan.bestFor}</p>

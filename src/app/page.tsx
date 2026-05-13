@@ -27,7 +27,7 @@ export default function Home() {
       <SchemaScript type="FinancialService" />
       <HomeHero />
       <TrustStrip />
-      <Section className="bg-[#eef1ff]" eyebrow="How it works" title="Understand the process before you apply">
+      <Section className="bg-[#263479] text-white" eyebrow="How it works" title="Understand the process before you apply">
         <ProcessSteps steps={processSteps.slice(0, 6)} />
       </Section>
       <Section eyebrow="Why borrowers choose Runda" title="Built for clarity, not confusion">

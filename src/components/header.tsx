@@ -12,15 +12,15 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#dfe3ee] bg-white/92 backdrop-blur-xl">
-      <div className="border-b border-[#e4e8f4] bg-[#eef1ff] text-[#263479]">
+    <header className="sticky top-0 z-50 border-b border-white/15 bg-[#263479]/95 text-white backdrop-blur-xl">
+      <div className="border-b border-white/12 bg-[#121b4d] text-white/82">
         <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-2 text-xs sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>Licensed and regulated: {siteDetails.license}</p>
           <p>Need guidance? Call {siteDetails.phones[0]}</p>
         </div>
       </div>
       <nav aria-label="Main navigation" className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="text-lg font-medium tracking-[-0.02em] text-[#050505]" aria-label="Runda Finance home" onClick={() => setOpen(false)}>
+        <Link href="/" className="text-lg font-medium tracking-[-0.02em] text-white" aria-label="Runda Finance home" onClick={() => setOpen(false)}>
           Runda Finance
         </Link>
         <div className="hidden items-center gap-6 lg:flex">
@@ -29,8 +29,8 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium text-[#3f4656] transition hover:text-[#263479] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f79e26]",
-                pathname === item.href && "text-[#263479]",
+                "text-sm font-medium text-white/76 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f79e26]",
+                pathname === item.href && "text-white",
               )}
             >
               {item.label}
@@ -45,7 +45,7 @@ export function Header() {
         </div>
         <button
           type="button"
-          className="inline-flex min-h-11 items-center rounded-md border border-[#dfe3ee] px-4 text-sm font-medium text-[#050505] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f79e26] lg:hidden"
+          className="inline-flex min-h-11 items-center rounded-md border border-white/25 px-4 text-sm font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f79e26] lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((value) => !value)}
@@ -54,13 +54,13 @@ export function Header() {
         </button>
       </nav>
       {open && (
-        <div id="mobile-menu" className="border-t border-[#d7dce2] bg-white lg:hidden">
+        <div id="mobile-menu" className="border-t border-white/12 bg-[#263479] lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-3 py-3 text-sm font-medium text-[#050505] hover:bg-[#eef1ff]"
+                className="rounded-md px-3 py-3 text-sm font-medium text-white hover:bg-white/10"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
