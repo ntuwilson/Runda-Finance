@@ -16,7 +16,7 @@ export function HomeHero() {
   return (
     <section className="bg-white text-[#050505]">
       <motion.div
-        className="relative min-h-[680px] overflow-hidden bg-[#263479] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8"
+        className="relative min-h-[680px] overflow-hidden bg-[#263479] px-8 py-16 text-white sm:px-10 sm:py-20 lg:px-16 xl:px-20"
         initial={reduceMotion ? false : "hidden"}
         animate={reduceMotion ? undefined : "show"}
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
@@ -28,13 +28,13 @@ export function HomeHero() {
         <div className="relative mx-auto flex min-h-[520px] max-w-7xl flex-col justify-center">
           <motion.div variants={reveal} className="max-w-3xl">
           <p className="mb-4 text-sm font-medium text-[#f79e26]">Responsible credit for Uganda</p>
-          <h1 className="text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-7xl">
-            Clear credit, simply explained.
+          <h1 className="text-5xl font-medium leading-[1.02] tracking-[-0.045em] text-white sm:text-7xl">
+            Clear, regulated financing for Uganda’s workers and growing businesses.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/86">
+          <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/95">
             Compare loan options, see the basic requirements, and speak to a loan officer before submitting an application.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-row flex-wrap gap-3">
             <ButtonLink href="/loans">View loan products</ButtonLink>
             <ButtonLink href="/contact" variant="ghost">
               Talk to a loan officer

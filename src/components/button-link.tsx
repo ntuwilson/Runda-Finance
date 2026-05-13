@@ -12,8 +12,8 @@ export function ButtonLink({ href, children, variant = "primary", className }: B
   return (
     <Link
       className={cn(
-        "group inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium shadow-sm transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f79e26] active:translate-y-px",
-        variant === "primary" && "bg-[#050505] text-white hover:-translate-y-0.5 hover:bg-[#263479] hover:shadow-md",
+        "group inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-md px-4 py-3 text-sm font-medium shadow-sm transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f79e26] active:translate-y-px sm:px-5",
+        variant === "primary" && "bg-[#263479] text-white hover:-translate-y-0.5 hover:bg-[#121b4d] hover:shadow-md",
         variant === "secondary" && "border border-[#f79e26] bg-[#f79e26] text-[#050505] hover:-translate-y-0.5 hover:bg-[#ffb755] hover:shadow-md",
         variant === "ghost" && "border border-[#dfe3ee] bg-white text-[#050505] hover:-translate-y-0.5 hover:border-[#263479] hover:bg-[#fff8ef] hover:text-[#050505] hover:shadow-md",
         className,
