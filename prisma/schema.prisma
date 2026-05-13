@@ -1,0 +1,87 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum LeadStatus {
+  New
+  Contacted
+  DocumentsRequested
+  UnderReview
+  Approved
+  Declined
+  Closed
+}
+
+enum LeadType {
+  Callback
+  Application
+  Complaint
+}
+
+model Lead {
+  id                   String              @id @default(cuid())
+  type                 LeadType
+  fullName             String
+  phone                String
+  email                String?
+  loanType             String?
+  requestedAmount      String?
+  sourcePage           String?
+  status               LeadStatus          @default(New)
+  assignedOfficer      OfficerAssignment?
+  internalNotes        String?
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @updatedAt
+  application          Application?
+  complaint            Complaint?
+  uploadedDocuments    UploadedDocument[]
+}
+
+model Application {
+  id                         String   @id @default(cuid())
+  leadId                     String   @unique
+  lead                       Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  employmentOrBusinessStatus String
+  loanPurpose                String
+  preferredContactTime       String
+  assetOrBusinessDetails     String?
+  consent                    Boolean
+  createdAt                  DateTime @default(now())
+}
+
+model Complaint {
+  id                     String   @id @default(cuid())
+  leadId                 String   @unique
+  lead                   Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  loanReference          String?
+  category               String
+  message                String
+  preferredContactMethod String
+  createdAt              DateTime @default(now())
+}
+
+model UploadedDocument {
+  id          String   @id @default(cuid())
+  leadId      String?
+  lead        Lead?    @relation(fields: [leadId], references: [id], onDelete: SetNull)
+  fileName    String
+  objectKey   String
+  contentType String
+  size        Int
+  scanStatus  String   @default("Pending")
+  createdAt   DateTime @default(now())
+}
+
+model OfficerAssignment {
+  id        String   @id @default(cuid())
+  leadId    String   @unique
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  officer   String
+  notes     String?
+  createdAt DateTime @default(now())
+}
