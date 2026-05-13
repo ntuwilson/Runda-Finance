@@ -16,32 +16,47 @@ export function HomeHero() {
   return (
     <section className="bg-white text-[#050505]">
       <motion.div
-        className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+        className="relative min-h-[680px] overflow-hidden bg-[#263479] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8"
         initial={reduceMotion ? false : "hidden"}
         animate={reduceMotion ? undefined : "show"}
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
       >
-        <motion.div variants={reveal} className="mx-auto max-w-4xl text-center">
-          <p className="mb-4 text-sm font-medium text-[#263479]">Responsible credit for Uganda</p>
-          <h1 className="text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-[#050505] sm:text-7xl">
+        <div className="absolute inset-0 bg-[url('/images/runda-hero.png')] bg-cover bg-center" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,27,77,0.94)_0%,rgba(38,52,121,0.76)_42%,rgba(5,5,5,0.28)_100%)]" aria-hidden="true" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#263479] to-transparent" aria-hidden="true" />
+
+        <div className="relative mx-auto flex min-h-[520px] max-w-7xl flex-col justify-center">
+          <motion.div variants={reveal} className="max-w-3xl">
+          <p className="mb-4 text-sm font-medium text-[#f79e26]">Responsible credit for Uganda</p>
+          <h1 className="text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-7xl">
             Clear credit, simply explained.
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#3f4656]">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/86">
             Compare loan options, see the basic requirements, and speak to a loan officer before submitting an application.
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/loans">View loan products</ButtonLink>
             <ButtonLink href="/contact" variant="ghost">
               Talk to a loan officer
             </ButtonLink>
           </div>
         </motion.div>
+        </div>
+      </motion.div>
 
-        <motion.div variants={reveal} className="mt-14 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
-          <div className="min-h-[360px] rounded-md bg-[linear-gradient(135deg,#263479_0%,#121b4d_62%,#050505_100%)] p-6 sm:p-8">
-            <div className="flex h-full min-h-[300px] items-center justify-center rounded-md border border-dashed border-white/45 bg-white/8 text-center text-sm font-medium text-white">
-              [Verified Runda office, staff, or customer support image]
-            </div>
+      <motion.div
+        className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8"
+        initial={reduceMotion ? false : "hidden"}
+        whileInView={reduceMotion ? undefined : "show"}
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
+      >
+        <motion.div variants={reveal} className="grid gap-4 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="text-sm font-medium text-[#263479]">Runda Finance</p>
+            <h2 className="mt-3 max-w-xl text-3xl font-medium tracking-[-0.035em] text-[#050505] sm:text-5xl">
+              Requirements, assessment, and human support in one clear path.
+            </h2>
           </div>
           <div className="grid gap-4">
             {["Requirements before application", "Assessment before approval", "Human loan support"].map((item) => (
