@@ -44,7 +44,7 @@ export function CallbackForm({ sourcePage = "contact" }: { sourcePage?: string }
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-5 rounded-lg border border-[#d7dce2] bg-white p-6">
+    <form onSubmit={onSubmit} className="grid gap-5 rounded-md border border-[#d7dce2] bg-white p-6">
       <div className="grid gap-5 md:grid-cols-2">
         <FormField id="fullName" label="Full Name" required error={errors.fullName}>
           <input className={inputClass} id="fullName" name="fullName" autoComplete="name" aria-describedby={errors.fullName ? "fullName-error" : undefined} />
@@ -83,18 +83,18 @@ export function CallbackForm({ sourcePage = "contact" }: { sourcePage?: string }
       <FormField id="message" label="Message">
         <textarea className={inputClass} id="message" name="message" rows={4} placeholder="Share anything the loan officer should know." />
       </FormField>
-      <label className="flex gap-3 text-sm leading-6 text-[#475467]">
+      <label className="flex gap-3 text-sm leading-6 text-[#3f4656]">
         <input className="mt-1 h-4 w-4" name="consent" type="checkbox" />
         <span>
           I consent to Runda Finance contacting me about my inquiry and processing my details according to the{" "}
-          <a className="font-medium text-[#111827] underline" href="/privacy-policy">
+          <a className="font-medium text-[#050505] underline" href="/privacy-policy">
             Privacy Policy
           </a>
           .
         </span>
       </label>
       {errors.consent && <p className="text-sm text-[#9a3412]">{errors.consent}</p>}
-      <button className="min-h-11 rounded-lg bg-[#111827] px-5 py-3 text-sm font-medium text-white hover:bg-[#1f2937]" disabled={status === "submitting"}>
+      <button className="min-h-11 rounded-md bg-[#050505] px-5 py-3 text-sm font-medium text-white hover:bg-[#1f2937]" disabled={status === "submitting"}>
         {status === "submitting" ? "Sending..." : "Request Callback"}
       </button>
       {status === "success" && <p className="text-sm font-semibold text-[#166534]">Thank you. Your request has been received. A Runda Finance team member will contact you using the details provided.</p>}

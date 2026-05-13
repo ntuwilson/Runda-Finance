@@ -57,10 +57,10 @@ export function ApplicationForm({ initialLoan = "" }: { initialLoan?: string }) 
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-lg border border-[#d7dce2] bg-white p-6">
+    <form onSubmit={onSubmit} className="rounded-md border border-[#d7dce2] bg-white p-6">
       <ol className="mb-8 grid gap-2 sm:grid-cols-5" aria-label="Application progress">
         {steps.map((label, index) => (
-          <li key={label} className={`rounded-lg px-3 py-2 text-xs font-medium ${index === step ? "bg-[#111827] text-white" : "bg-[#f5f5f7] text-[#475467]"}`}>
+          <li key={label} className={`rounded-md px-3 py-2 text-xs font-medium ${index === step ? "bg-[#050505] text-white" : "bg-[#eef1ff] text-[#3f4656]"}`}>
             {index + 1}. {label}
           </li>
         ))}
@@ -127,21 +127,21 @@ export function ApplicationForm({ initialLoan = "" }: { initialLoan?: string }) 
             onChange={(event) => setFiles(Array.from(event.target.files ?? []).map((file) => file.name))}
           />
         </FormField>
-        <p className="text-sm leading-6 text-[#475467]">
+        <p className="text-sm leading-6 text-[#3f4656]">
           Documents are captured for routing and secure upload configuration. Accepted files and size limits are enforced by the upload endpoint before storage.
         </p>
-        {files.length > 0 && <p className="text-sm text-[#475467]">Selected: {files.join(", ")}</p>}
+        {files.length > 0 && <p className="text-sm text-[#3f4656]">Selected: {files.join(", ")}</p>}
       </div>
 
       <div className={step === 4 ? "grid gap-5" : "hidden"}>
-        <div className="rounded-lg bg-[#f5f5f7] p-4 text-sm leading-6 text-[#475467]">
+        <div className="rounded-md bg-[#eef1ff] p-4 text-sm leading-6 text-[#3f4656]">
           Review your details before submitting. Submission does not guarantee approval. A Runda Finance team member may request more information or documents.
         </div>
-        <label className="flex gap-3 text-sm leading-6 text-[#475467]">
+        <label className="flex gap-3 text-sm leading-6 text-[#3f4656]">
           <input className="mt-1 h-4 w-4" name="consent" type="checkbox" />
           <span>
             I confirm the information is accurate and consent to processing according to the{" "}
-            <a className="font-medium text-[#111827] underline" href="/privacy-policy">
+            <a className="font-medium text-[#050505] underline" href="/privacy-policy">
               Privacy Policy
             </a>
             .
@@ -157,15 +157,15 @@ export function ApplicationForm({ initialLoan = "" }: { initialLoan?: string }) 
       )}
 
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-between">
-        <button type="button" className="min-h-11 rounded-lg border border-[#e5e7eb] px-5 py-3 text-sm font-medium text-[#111827]" onClick={back} disabled={step === 0}>
+        <button type="button" className="min-h-11 rounded-md border border-[#e4e8f4] px-5 py-3 text-sm font-medium text-[#050505]" onClick={back} disabled={step === 0}>
           Back
         </button>
         {step < steps.length - 1 ? (
-          <button type="button" className="min-h-11 rounded-lg bg-[#111827] px-5 py-3 text-sm font-medium text-white" onClick={next}>
+          <button type="button" className="min-h-11 rounded-md bg-[#050505] px-5 py-3 text-sm font-medium text-white" onClick={next}>
             Continue
           </button>
         ) : (
-          <button className="min-h-11 rounded-lg bg-[#111827] px-5 py-3 text-sm font-medium text-white" disabled={status === "submitting"}>
+          <button className="min-h-11 rounded-md bg-[#050505] px-5 py-3 text-sm font-medium text-white" disabled={status === "submitting"}>
             {status === "submitting" ? "Submitting..." : "Submit Application"}
           </button>
         )}

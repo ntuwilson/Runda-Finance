@@ -31,7 +31,7 @@ export default function LoansPage() {
       <Section className="bg-[#f7f8fa]" eyebrow="Before you apply" title="Prepare the basics early">
         <div className="grid gap-4 md:grid-cols-2">
           {["Confirm the right loan product.", "Review the required documents.", "Check whether repayment fits your income or business cash flow.", "Speak to a loan officer if any requirement is unclear."].map((item) => (
-            <div key={item} className="rounded-xl bg-white p-5 text-sm leading-6 text-[#475467]">
+            <div key={item} className="rounded-md bg-white p-5 text-sm leading-6 text-[#3f4656]">
               {item}
             </div>
           ))}

@@ -27,13 +27,13 @@ export default function Home() {
       <SchemaScript type="FinancialService" />
       <HomeHero />
       <TrustStrip />
-      <Section className="bg-[#f5f5f7]" eyebrow="How it works" title="Understand the process before you apply">
+      <Section className="bg-[#eef1ff]" eyebrow="How it works" title="Understand the process before you apply">
         <ProcessSteps steps={processSteps.slice(0, 6)} />
       </Section>
       <Section eyebrow="Why borrowers choose Runda" title="Built for clarity, not confusion">
         <div className="grid gap-4 md:grid-cols-3">
           {["Requirements are shown before applying.", "A loan officer can guide you through the product.", "Every approval is subject to verification and assessment."].map((item) => (
-            <div key={item} className="rounded-xl border border-[#e5e7eb] bg-white p-6 text-xl font-medium leading-snug tracking-[-0.02em] text-[#111827]">
+            <div key={item} className="rounded-md border border-[#e4e8f4] bg-white p-6 text-xl font-medium leading-snug tracking-[-0.02em] text-[#050505]">
               {item}
             </div>
           ))}
@@ -42,10 +42,10 @@ export default function Home() {
           <ComplianceDisclaimer />
         </div>
       </Section>
-      <Section className="bg-[#f5f5f7]" eyebrow="Who we serve" title="Practical credit for real borrower needs">
+      <Section className="bg-[#eef1ff]" eyebrow="Who we serve" title="Practical credit for real borrower needs">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {["Salaried workers", "Small business owners", "Established businesses", "Suppliers and contractors", "Vehicle owners", "Customers with urgent short-term needs"].map((item) => (
-            <div key={item} className="rounded-xl bg-white px-5 py-4 font-medium text-[#111827]">
+            <div key={item} className="rounded-md bg-white px-5 py-4 font-medium text-[#050505]">
               {item}
             </div>
           ))}

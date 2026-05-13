@@ -40,7 +40,7 @@ export function ComplaintForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-5 rounded-lg border border-[#d7dce2] bg-white p-6">
+    <form onSubmit={onSubmit} className="grid gap-5 rounded-md border border-[#d7dce2] bg-white p-6">
       <div className="grid gap-5 md:grid-cols-2">
         <FormField id="fullName" label="Full Name" required error={errors.fullName}>
           <input className={inputClass} id="fullName" name="fullName" autoComplete="name" />
@@ -76,7 +76,7 @@ export function ComplaintForm() {
       <FormField id="message" label="Message" required error={errors.message}>
         <textarea className={inputClass} id="message" name="message" rows={5} placeholder="Describe the concern clearly." />
       </FormField>
-      <button className="min-h-11 rounded-lg bg-[#111827] px-5 py-3 text-sm font-medium text-white hover:bg-[#1f2937]" disabled={status === "submitting"}>
+      <button className="min-h-11 rounded-md bg-[#050505] px-5 py-3 text-sm font-medium text-white hover:bg-[#1f2937]" disabled={status === "submitting"}>
         {status === "submitting" ? "Sending..." : "Submit Complaint"}
       </button>
       {status === "success" && <p className="text-sm font-semibold text-[#166534]">Your complaint has been received. Runda Finance will review it and contact you through the details provided.</p>}

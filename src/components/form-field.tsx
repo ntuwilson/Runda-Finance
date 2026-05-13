@@ -9,7 +9,7 @@ type BaseProps = {
 export function FormField({ id, label, required, error, children }: BaseProps) {
   return (
     <div>
-      <label htmlFor={id} className="mb-2 block text-sm font-medium text-[#111827]">
+      <label htmlFor={id} className="mb-2 block text-sm font-medium text-[#050505]">
         {label} {required && <span className="text-[#9a3412]">*</span>}
       </label>
       {children}
@@ -23,4 +23,4 @@ export function FormField({ id, label, required, error, children }: BaseProps) {
 }
 
 export const inputClass =
-  "min-h-11 w-full rounded-lg border border-[#d0d5dd] bg-white px-3 py-2 text-sm text-[#111827] shadow-sm focus:border-[#2f6fed] focus:outline-none focus:ring-2 focus:ring-[#2f6fed]/20";
+  "min-h-11 w-full rounded-md border border-[#cfd6ea] bg-white px-3 py-2 text-sm text-[#050505] shadow-sm focus:border-[#263479] focus:outline-none focus:ring-2 focus:ring-[#263479]/20";

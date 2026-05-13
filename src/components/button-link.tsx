@@ -12,10 +12,10 @@ export function ButtonLink({ href, children, variant = "primary", className }: B
   return (
     <Link
       className={cn(
-        "inline-flex min-h-11 items-center justify-center rounded-lg px-5 py-3 text-sm font-medium transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2f6fed]",
-        variant === "primary" && "bg-[#111827] text-white hover:bg-[#1f2937]",
-        variant === "secondary" && "border border-[#d8a938] bg-[#d8a938] text-[#111827] hover:bg-[#e3bd58]",
-        variant === "ghost" && "border border-[#e5e7eb] bg-white text-[#111827] hover:bg-[#f5f5f7]",
+        "inline-flex min-h-11 items-center justify-center rounded-md px-5 py-3 text-sm font-medium transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f79e26]",
+        variant === "primary" && "bg-[#050505] text-white hover:bg-[#263479]",
+        variant === "secondary" && "border border-[#f79e26] bg-[#f79e26] text-[#050505] hover:bg-[#ffb755]",
+        variant === "ghost" && "border border-[#dfe3ee] bg-white text-[#050505] hover:bg-[#eef1ff]",
         className,
       )}
       href={href}

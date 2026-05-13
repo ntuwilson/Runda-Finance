@@ -14,7 +14,7 @@ export default function ManagingDirectorMessagePage() {
     <>
       <Hero title="A message from our Managing Director" body="Responsible credit begins with trust, clarity, and service." primary={{ href: "/about", label: "About Runda" }} placeholder="[Managing Director Photo]" />
       <Section eyebrow="Leadership message" title="Responsible lending with clarity">
-        <div className="max-w-3xl rounded-xl border border-[#e5e7eb] bg-white p-6 text-sm leading-7 text-[#475467]">
+        <div className="max-w-3xl rounded-md border border-[#e4e8f4] bg-white p-6 text-sm leading-7 text-[#3f4656]">
           <p>
             Customers borrow because of real needs. Runda Finance is committed to supporting workers and businesses with professional service, clear information, and responsible assessment.
           </p>

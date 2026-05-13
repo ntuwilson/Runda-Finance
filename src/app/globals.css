@@ -2,7 +2,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #101820;
+  --foreground: #050505;
+  --brand-blue: #263479;
+  --brand-blue-dark: #121b4d;
+  --brand-blue-soft: #eef1ff;
+  --brand-gold: #f79e26;
+  --brand-black: #050505;
 }
 
 @theme inline {
@@ -38,6 +43,6 @@ a {
 }
 
 ::selection {
-  background: #d7a740;
-  color: #101820;
+  background: var(--brand-gold);
+  color: var(--brand-black);
 }

@@ -43,17 +43,17 @@ export default async function LoanProductPage({ params }: Props) {
       />
       <Section eyebrow="Who this loan is for" title={loan.bestFor}>
         <div className="grid gap-5 md:grid-cols-2">
-          <div className="rounded-xl border border-[#e5e7eb] bg-white p-6">
-            <h2 className="text-2xl font-medium text-[#111827]">Common uses</h2>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-[#475467]">
+          <div className="rounded-md border border-[#e4e8f4] bg-white p-6">
+            <h2 className="text-2xl font-medium text-[#050505]">Common uses</h2>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-[#3f4656]">
               {loan.uses.map((use) => (
                 <li key={use}>{use}</li>
               ))}
             </ul>
           </div>
-          <div className="rounded-xl border border-[#e5e7eb] bg-white p-6">
-            <h2 className="text-2xl font-medium text-[#111827]">Verified product terms</h2>
-            <p className="mt-4 text-sm leading-6 text-[#475467]">{loan.range}</p>
+          <div className="rounded-md border border-[#e4e8f4] bg-white p-6">
+            <h2 className="text-2xl font-medium text-[#050505]">Verified product terms</h2>
+            <p className="mt-4 text-sm leading-6 text-[#3f4656]">{loan.range}</p>
           </div>
         </div>
       </Section>

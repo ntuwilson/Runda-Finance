@@ -14,7 +14,7 @@ export default function Image() {
         style={{
           alignItems: "center",
           background: "#f4f6f8",
-          color: "#0b1f3a",
+          color: "#263479",
           display: "flex",
           height: "100%",
           justifyContent: "center",
