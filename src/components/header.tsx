@@ -23,14 +23,15 @@ export function Header() {
         <Link href="/" className="text-lg font-medium tracking-[-0.02em] text-white" aria-label="Runda Finance home" onClick={() => setOpen(false)}>
           Runda Finance
         </Link>
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="hidden items-center gap-5 lg:flex">
           {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium text-white/76 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f79e26]",
-                pathname === item.href && "text-white",
+                "relative rounded-sm px-1 py-2 text-sm font-medium text-white/72 transition duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f79e26] after:absolute after:inset-x-1 after:bottom-0 after:h-0.5 after:origin-left after:scale-x-0 after:bg-[#f79e26] after:transition-transform hover:after:scale-x-100",
+                (pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))) &&
+                  "font-semibold text-white after:scale-x-100",
               )}
             >
               {item.label}

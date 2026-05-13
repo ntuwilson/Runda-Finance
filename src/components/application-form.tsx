@@ -57,10 +57,17 @@ export function ApplicationForm({ initialLoan = "" }: { initialLoan?: string }) 
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-md border border-[#d7dce2] bg-white p-6">
-      <ol className="mb-8 grid gap-2 sm:grid-cols-5" aria-label="Application progress">
+    <form onSubmit={onSubmit} className="mx-auto max-w-4xl rounded-md border border-[#e4e8f4] bg-white p-5 shadow-sm sm:p-6">
+      <ol className="mb-7 grid gap-2 sm:grid-cols-5" aria-label="Application progress">
         {steps.map((label, index) => (
-          <li key={label} className={`rounded-md px-3 py-2 text-xs font-medium ${index === step ? "bg-[#050505] text-white" : "bg-[#eef1ff] text-[#3f4656]"}`}>
+          <li
+            key={label}
+            className={`rounded-sm border px-3 py-2 text-xs font-medium ${
+              index === step
+                ? "border-[#263479] bg-[#263479] text-white"
+                : "border-[#e4e8f4] bg-[#f8f9ff] text-[#3f4656]"
+            }`}
+          >
             {index + 1}. {label}
           </li>
         ))}
@@ -156,8 +163,13 @@ export function ApplicationForm({ initialLoan = "" }: { initialLoan?: string }) 
         </div>
       )}
 
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-between">
-        <button type="button" className="min-h-11 rounded-md border border-[#e4e8f4] px-5 py-3 text-sm font-medium text-[#050505]" onClick={back} disabled={step === 0}>
+      <div className="mt-8 flex flex-col gap-3 border-t border-[#e4e8f4] pt-5 sm:flex-row sm:justify-between">
+        <button
+          type="button"
+          className="min-h-11 rounded-md border border-[#e4e8f4] px-5 py-3 text-sm font-medium text-[#050505] transition hover:-translate-y-0.5 hover:border-[#263479] hover:bg-[#eef1ff] disabled:cursor-not-allowed disabled:opacity-45"
+          onClick={back}
+          disabled={step === 0}
+        >
           Back
         </button>
         {step < steps.length - 1 ? (
