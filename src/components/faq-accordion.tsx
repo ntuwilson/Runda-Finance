@@ -1,6 +1,6 @@
 export function FAQAccordion({ items }: { items: { question: string; answer: string; category?: string }[] }) {
   return (
-    <div className="divide-y divide-[#e4e8f4] rounded-lg border border-[#e4e8f4] bg-white">
+    <div className="divide-y divide-[#e4e8f4] rounded-md border border-[#e4e8f4] bg-white">
       {items.map((item) => (
         <details key={item.question} className="group p-6">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-medium text-[#050505] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f79e26]">

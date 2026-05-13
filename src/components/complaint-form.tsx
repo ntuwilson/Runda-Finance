@@ -76,7 +76,7 @@ export function ComplaintForm() {
       <FormField id="message" label="Message" required error={errors.message}>
         <textarea className={inputClass} id="message" name="message" rows={5} placeholder="Describe the concern clearly." />
       </FormField>
-      <button className="min-h-11 rounded-md bg-[#050505] px-5 py-3 text-sm font-medium text-white hover:bg-[#1f2937]" disabled={status === "submitting"}>
+      <button className="min-h-11 rounded-md bg-[#050505] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#263479] hover:shadow-md active:translate-y-px" disabled={status === "submitting"}>
         {status === "submitting" ? "Sending..." : "Submit Complaint"}
       </button>
       {status === "success" && <p className="text-sm font-semibold text-[#166534]">Your complaint has been received. Runda Finance will review it and contact you through the details provided.</p>}

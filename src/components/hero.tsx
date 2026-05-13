@@ -29,7 +29,7 @@ export function Hero({ eyebrow, title, body, primary, secondary, placeholder = "
             </div>
           )}
         </Reveal>
-        <Reveal delay={0.08} className="min-h-[280px] overflow-hidden rounded-lg bg-[linear-gradient(135deg,#eef1ff_0%,#ffffff_48%,#e8ecff_100%)] p-4">
+        <Reveal delay={0.08} className="min-h-[280px] overflow-hidden rounded-md bg-[linear-gradient(135deg,#eef1ff_0%,#ffffff_48%,#e8ecff_100%)] p-4">
           <div className="flex h-full min-h-[260px] items-center justify-center rounded-md border border-dashed border-[#b8c0df] bg-white/72 text-center text-sm font-medium text-[#263479]">
             {placeholder}
           </div>

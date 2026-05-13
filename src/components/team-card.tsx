@@ -1,6 +1,6 @@
 export function TeamCard({ member }: { member: { name: string; title: string; summary: string; image: string } }) {
   return (
-    <article className="rounded-lg border border-[#e4e8f4] bg-white p-5">
+    <article className="rounded-md border border-[#e4e8f4] bg-white p-5">
       <div className="mb-5 flex h-48 items-center justify-center rounded-md border border-dashed border-[#b8c0df] bg-[#eef1ff] text-sm font-medium text-[#263479]">
         {member.image}
       </div>

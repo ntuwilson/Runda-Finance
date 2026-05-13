@@ -161,11 +161,11 @@ export function ApplicationForm({ initialLoan = "" }: { initialLoan?: string }) 
           Back
         </button>
         {step < steps.length - 1 ? (
-          <button type="button" className="min-h-11 rounded-md bg-[#050505] px-5 py-3 text-sm font-medium text-white" onClick={next}>
+          <button type="button" className="min-h-11 rounded-md bg-[#050505] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#263479] hover:shadow-md active:translate-y-px" onClick={next}>
             Continue
           </button>
         ) : (
-          <button className="min-h-11 rounded-md bg-[#050505] px-5 py-3 text-sm font-medium text-white" disabled={status === "submitting"}>
+          <button className="min-h-11 rounded-md bg-[#050505] px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#263479] hover:shadow-md active:translate-y-px" disabled={status === "submitting"}>
             {status === "submitting" ? "Submitting..." : "Submit Application"}
           </button>
         )}
