@@ -10,10 +10,16 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const isHome = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/15 bg-[#263479]/95 text-white backdrop-blur-xl">
-      <div className="border-b border-white/12 bg-[#121b4d] text-white/82">
+    <header
+      className={cn(
+        "sticky top-0 z-50 text-white backdrop-blur-xl transition-colors",
+        isHome ? "border-b border-white/12 bg-black/28" : "border-b border-white/15 bg-[#263479]/95",
+      )}
+    >
+      <div className={cn("border-b border-white/12 text-white/82", isHome ? "bg-black/22" : "bg-[#121b4d]")}>
         <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-2 text-xs sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>Licensed and regulated: {siteDetails.license}</p>
           <p>Need guidance? Call {siteDetails.phones[0]}</p>
@@ -55,7 +61,7 @@ export function Header() {
         </button>
       </nav>
       {open && (
-        <div id="mobile-menu" className="border-t border-white/12 bg-[#263479] lg:hidden">
+        <div id="mobile-menu" className={cn("border-t border-white/12 lg:hidden", isHome ? "bg-black/82" : "bg-[#263479]")}>
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
             {navigation.map((item) => (
               <Link

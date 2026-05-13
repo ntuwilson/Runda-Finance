@@ -22,8 +22,8 @@ export function HomeHero() {
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
       >
         <div className="absolute inset-0 bg-[url('/images/runda-hero.png')] bg-cover bg-center" aria-hidden="true" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,27,77,0.94)_0%,rgba(38,52,121,0.76)_42%,rgba(5,5,5,0.28)_100%)]" aria-hidden="true" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#263479] to-transparent" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.64)_42%,rgba(0,0,0,0.22)_100%)]" aria-hidden="true" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/62 to-transparent" aria-hidden="true" />
 
         <div className="relative mx-auto flex min-h-[520px] max-w-7xl flex-col justify-center">
           <motion.div variants={reveal} className="max-w-3xl">
