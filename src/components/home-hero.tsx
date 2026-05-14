@@ -16,31 +16,31 @@ export function HomeHero() {
   return (
     <section className="bg-white text-[#050505]">
       <motion.div
-        className="relative min-h-[680px] overflow-hidden bg-[#263479] px-8 py-16 text-white sm:px-10 sm:py-20 lg:px-16 xl:px-20"
+        className="relative isolate overflow-hidden bg-[#263479] px-4 py-12 text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:px-10"
         initial={reduceMotion ? false : "hidden"}
         animate={reduceMotion ? undefined : "show"}
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
       >
-        <div className="absolute inset-0 bg-[url('/images/runda-hero.png')] bg-cover bg-center" aria-hidden="true" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.64)_42%,rgba(0,0,0,0.22)_100%)]" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[url('/images/runda-hero.png')] bg-cover bg-[position:58%_center] sm:bg-center" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.84)_0%,rgba(0,0,0,0.68)_48%,rgba(0,0,0,0.46)_100%)] md:bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.64)_42%,rgba(0,0,0,0.22)_100%)]" aria-hidden="true" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/62 to-transparent" aria-hidden="true" />
 
-        <div className="relative mx-auto flex min-h-[520px] max-w-7xl flex-col justify-center">
-          <motion.div variants={reveal} className="max-w-3xl">
-          <p className="mb-4 text-sm font-medium text-[#f79e26]">Responsible credit for Uganda</p>
-          <h1 className="text-5xl font-medium leading-[1.02] tracking-[-0.045em] text-white sm:text-7xl">
-            Clear, regulated financing for Uganda’s workers and growing businesses.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/95">
-            Compare loan options, see the basic requirements, and speak to a loan officer before submitting an application.
-          </p>
-          <div className="mt-8 flex flex-row flex-wrap gap-3">
-            <ButtonLink href="/loans">View loan products</ButtonLink>
-            <ButtonLink href="/contact" variant="ghost">
-              Talk to a loan officer
-            </ButtonLink>
-          </div>
-        </motion.div>
+        <div className="relative mx-auto flex min-h-[420px] w-full min-w-0 max-w-7xl flex-col justify-center py-6 sm:min-h-[520px] lg:min-h-[560px] xl:min-h-[600px]">
+          <motion.div variants={reveal} className="w-full min-w-0 max-w-3xl">
+            <p className="mb-4 text-sm font-medium text-[#f79e26]">Responsible credit for Uganda</p>
+            <h1 className="max-w-full text-3xl font-medium leading-[1.08] text-white min-[380px]:text-4xl sm:text-6xl lg:text-7xl">
+              Clear, regulated financing for Ugandan workers and growing businesses.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-white/95">
+              Compare loan options, see the basic requirements, and speak to a loan officer before submitting an application.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <ButtonLink href="/loans">View loan products</ButtonLink>
+              <ButtonLink href="/contact" variant="ghost">
+                Talk to a loan officer
+              </ButtonLink>
+            </div>
+          </motion.div>
         </div>
       </motion.div>
 
@@ -54,7 +54,7 @@ export function HomeHero() {
         <motion.div variants={reveal} className="grid gap-4 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-medium text-[#263479]">Runda Finance</p>
-            <h2 className="mt-3 max-w-xl text-3xl font-medium tracking-[-0.035em] text-[#050505] sm:text-5xl">
+            <h2 className="mt-3 max-w-xl text-3xl font-medium leading-tight text-[#050505] sm:text-5xl">
               Requirements, assessment, and human support in one clear path.
             </h2>
           </div>
@@ -62,7 +62,7 @@ export function HomeHero() {
             {["Requirements before application", "Assessment before approval", "Human loan support"].map((item) => (
               <div key={item} className="rounded-md border border-[#e4e8f4] bg-[#eef1ff] p-6">
                 <p className="text-sm font-medium text-[#263479]">Runda Finance</p>
-                <h2 className="mt-3 text-2xl font-medium tracking-[-0.025em] text-[#050505]">{item}</h2>
+                <h2 className="mt-3 text-2xl font-medium leading-tight text-[#050505]">{item}</h2>
               </div>
             ))}
           </div>
@@ -72,7 +72,7 @@ export function HomeHero() {
           <div className="mb-5 flex items-end justify-between gap-4">
             <div>
               <p className="text-sm font-medium text-[#263479]">Loan products</p>
-              <h2 className="mt-2 text-3xl font-medium tracking-[-0.035em] text-[#050505] sm:text-5xl">Choose the right starting point.</h2>
+              <h2 className="mt-2 text-3xl font-medium leading-tight text-[#050505] sm:text-5xl">Choose the right starting point.</h2>
             </div>
             <Link href="/loans" className="hidden text-sm font-medium text-[#263479] hover:text-[#050505] sm:inline">
               See all
@@ -85,9 +85,9 @@ export function HomeHero() {
                 href={`/loans/${loan.slug}`}
                 className="group rounded-md border border-[#e4e8f4] bg-white p-5 text-[#050505] transition hover:-translate-y-0.5 hover:border-[#263479] hover:bg-[#eef1ff] hover:shadow-sm"
               >
-                <h3 className="text-xl font-medium tracking-[-0.02em] text-[#050505]">{loan.name}</h3>
+                <h3 className="text-xl font-medium leading-tight text-[#050505]">{loan.name}</h3>
                 <p className="mt-3 text-sm leading-6 text-[#3f4656]">{loan.bestFor}</p>
-                <p className="mt-6 text-sm font-medium text-[#263479]">Check requirements <span aria-hidden="true">→</span></p>
+                <p className="mt-6 text-sm font-medium text-[#263479]">Check requirements <span aria-hidden="true">-&gt;</span></p>
               </Link>
             ))}
           </div>
